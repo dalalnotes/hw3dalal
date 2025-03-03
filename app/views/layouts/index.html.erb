@@ -1,0 +1,13 @@
+<!-- app/views/places/index.html.erb -->
+<h1>Places Visited</h1>
+
+<ul>
+  <% @places.each do |place| %>
+    <li>
+      <%= link_to place.name, place_path(place) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add New Place", new_place_path %>
+

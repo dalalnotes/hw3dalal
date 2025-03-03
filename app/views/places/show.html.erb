@@ -1,0 +1,15 @@
+<!-- app/views/places/show.html.erb -->
+<h1><%= @place.name %></h1>
+<%= link_to "Back to All Places", places_path %>
+
+<h2>Journal Entries</h2>
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <strong><%= entry.title %></strong> on <%= entry.posted_on %>
+      <p><%= entry.description %></p>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add New Entry", new_place_entry_path(@place) %>

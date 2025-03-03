@@ -1,0 +1,22 @@
+<!-- app/views/entries/new.html.erb -->
+<h1>New Entry for <%= @place.name %></h1>
+
+<%= form_with model: [@place, @entry], local: true do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.label :posted_on, "Date" %>
+    <%= f.date_field :posted_on %>
+  </div>
+  <div>
+    <%= f.submit "Create Entry" %>
+  </div>
+<% end %>
+
+<%= link_to "Back", place_path(@place) %>
